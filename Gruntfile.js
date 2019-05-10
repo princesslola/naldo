@@ -19,17 +19,17 @@ module.exports = function(grunt) {
         }
       },
       jshint: {
-        files: ['js/*.js'],
+        files: ['assets/js/*.js'],
       },
       watch: {
         options: {
-          livereload: true,
+          livereload: false,
         },
         html: {
-          files: ['index.html'],
+          files: ['index.php'],
         },
         js: {
-          files: ['js/**/*.js'],
+          files: ['assets/js/**/*.js'],
           tasks: ['jshint'],
         },
         less: {
@@ -37,13 +37,13 @@ module.exports = function(grunt) {
             // Monitor Less files for changes and compile them, but don't reload the browser.
             livereload: false,
           },
-          files: ['css/**/*.less'],
+          files: ['assets/css/**/*.less'],
           tasks: ['less'],
         },
         css: {
           // LiveReload on the CSS files instead of their Less source files and you get
           // the style to refresh without reloading the page in the browser.
-          files: ['css/**/*.css'],
+          files: ['assets/css/**/*.css'],
         },
       },
     });

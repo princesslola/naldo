@@ -1,0 +1,122 @@
+//
+//  Add any css property
+//  ---------------------------------------------
+
+.lib-css(
+    @_property,
+    @_value,
+    @_prefix: 0
+) when (@_prefix = 1)
+  and not (@_value = '')
+  and not (@_value = false)
+  and not (extract(@_value, 1) = false)
+  and not (extract(@_value, 2) = false)
+  and not (extract(@_value, 3) = false)
+  and not (extract(@_value, 4) = false)
+  and not (extract(@_value, 5) = false) {
+  -webkit-@{_property}: @_value;
+       -moz-@{_property}: @_value;
+        -ms-@{_property}: @_value;
+}
+
+.lib-css(
+    @_property,
+    @_value,
+    @_prefix: 0
+) when not (@_value = '')
+  and not (@_value = false)
+  and not (extract(@_value, 1) = false)
+  and not (extract(@_value, 2) = false)
+  and not (extract(@_value, 3) = false)
+  and not (extract(@_value, 4) = false)
+  and not (extract(@_value, 5) = false) {
+    @{_property}: @_value;
+}
+
+//
+//  Flex layout
+//  ---------------------------------------------
+
+.lib-vendor-prefix-display(
+    @_value: flex
+) {
+    display: ~"-webkit-@{_value}";
+    display: ~"-ms-@{_value}box";
+    display: @_value;
+}
+
+.lib-vendor-prefix-flex-grow(
+    @_value: 0
+) {
+    -webkit-flex-grow: @_value;
+            flex-grow: @_value;
+}
+
+.lib-vendor-prefix-flex-shrink (
+    @_value: 1
+) {
+    -webkit-flex-shrink: @_value;
+            flex-shrink: @_value;
+}
+
+.lib-vendor-prefix-flex-basis (
+    @_value: auto
+) {
+    -webkit-flex-basis: @_value;
+            flex-basis: @_value;
+}
+
+.lib-vendor-prefix-flex-wrap (
+    @_value: wrap
+) {
+    -webkit-flex-wrap: @_value;
+            flex-wrap: @_value;
+}
+
+.lib-vendor-prefix-flex-direction (
+    @_value: column
+) {
+    -webkit-flex-direction: @_value;
+        -ms-flex-direction: @_value;
+            flex-direction: @_value;
+}
+
+.lib-vendor-prefix-order (
+    @_value: 0
+) {
+    -ms-flex-order: @_value;
+     -webkit-order: @_value;
+             order: @_value;
+}
+
+.lib-vendor-box-align (
+    @_value: stretch
+) {
+    -webkit-align-items: @_value;
+        -ms-align-items: @_value;
+            align-items: @_value;
+}
+
+//
+//  Clearfix
+//  ---------------------------------------------
+
+.lib-clearfix() {
+    &:before,
+    &:after {
+        content: '';
+        display: table;
+    }
+
+    &:after {
+        clear: both;
+    }
+}
+
+.lib-clearer() {
+    &:after {
+        clear: both;
+        content: '';
+        display: table;
+    }
+}
