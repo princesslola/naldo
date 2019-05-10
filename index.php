@@ -47,7 +47,7 @@
 		</div>
 		<!-- Page Content -->
 		<section class="main-content home">
-			<div class="first-category container-fluid">
+			<div class="first-category container-fluid" style="max-width: 1400px;">
 					<div class="row">
 						<div class="col-md-12">
 							<div class="yCmsContentSlot">
@@ -230,6 +230,7 @@
 					nav: true,
 					dots: false,
 					items: 4,
+					margin: 15,
 					responsive : {
 						0 : {
 							items: 1

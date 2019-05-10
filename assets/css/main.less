@@ -94,12 +94,13 @@
 
     .carousel__item {
         text-align: center;
+        padding: 15px;
 
         &.has-reg-price {
             .price-box {
                 position: absolute;
                 left: 0;
-                bottom: 0;
+                bottom: 15px;
                 width: 100%;
                 z-index: 2;
             }
@@ -116,17 +117,17 @@
                 &.owl-prev,
                 &.owl-next {
                     font-family: @main-slider__nav__font-family;
-                    font-size: @main-slider__nav__font-size;
-                    color: white;
+                    font-size: 40px;
+                    color: #dc1e0f;
                     .lib-css(border-radius, 0, 1);
-                    width: 25px;
+                    width: 35px;
                     overflow: hidden;
 
                     span {
                         width: 50px;
                         height: 50px;
                         .lib-css(border-radius, 50%, 1);
-                        background: #dc1e0f;
+                        background: none;
                         display: block;
                         line-height: 47px;
                     }
@@ -137,7 +138,7 @@
                 }
 
                 &.owl-prev {
-                    margin-left: -35px;
+                    margin-left: -40px;
                     text-align: left;
                     span {
                         padding-left: 8px;
@@ -145,7 +146,7 @@
                 }
                 
                 &.owl-next {
-                    margin-right: -35px;
+                    margin-right: -50px;
                     text-align: right;
                     span {
                         padding-right: 8px;
@@ -184,17 +185,18 @@
                 .owl-nav {
                     > button {
                         &.owl-prev {
-                            margin-left: -25px;
+                            margin-left: -45px;
                             text-align: right;
+                            width: 40px;
                             span {
-                                padding-right: 10px;
                                 margin-left: -25px;
                             }
                         }
                         
                         &.owl-next {
-                            margin-right: -25px;
+                            margin-right: -45px;
                             text-align: left;
+                            width: 40px;
                             span {
                                 padding-left: 10px;
                                 padding-right: 0;
@@ -211,7 +213,7 @@
 .carousel__component {
     .owl-carousel {
         .owl-item {
-            border: 1px solid #fff;
+            border: 1px solid #eee;
             .lib-css(transition, border-color 300ms, 1);
 
             &:hover {
@@ -221,6 +223,7 @@
 
         .owl-stage-outer {
             padding-left: 1px;
+            padding-right: 1px;
         }
     }
 }
@@ -258,6 +261,16 @@
 
 @media (max-width: 767px){
     .carousel__component {
-        padding: 0;
+        .owl-carousel {
+            .owl-stage-outer {
+                overflow: initial;
+            }
+        }
+    }
+}
+
+@media (min-width: 768px){
+    .carousel__component {
+        padding: 0 25px;
     }
 }
