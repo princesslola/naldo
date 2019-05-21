@@ -172,7 +172,7 @@
                     }
 
                     &:before {
-                        content: "";
+                        font-family: inherit;
                     }
 
                     &:hover {
@@ -185,12 +185,20 @@
                     margin-left: -30px;
                     text-align: left;
                     left: 0;
+
+                    &:before {
+                        content: "‹";
+                    }
                 }
                 
                 &.owl-next {
                     margin-right: -30px;
                     text-align: right;
                     right: 0;
+
+                    &:before {
+                        content: "›";
+                    }
                 }
             }
 

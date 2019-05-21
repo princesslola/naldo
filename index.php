@@ -220,7 +220,7 @@
 			$(document).ready(function(){
 				$(".new-owl-carousel").owlCarousel({
 					navigation: true,
-					navigationText : ["‹", "›"],
+					navigationText : ["", ""],
 					pagination: false,
 					items: 4,
 					itemsDesktop: false,
