@@ -125,16 +125,12 @@
 }
 
 .new-owl-carousel {
+    position: relative;
+
     .owl-item {
         float: left;
         padding: 0 7px;
         position: relative;
-    }
-
-    .owl-wrapper-outer {
-        .owl-wrapper {
-            .lib-vendor-prefix-display(flex ~'!important');
-        }
     }
 
     .carousel__item {
@@ -145,6 +141,11 @@
             .product-price {
                 margin-top: 37px;
             }
+        }
+
+        .product-title {
+            height: 30px;
+            overflow: hidden;
         }
     }
 
@@ -252,6 +253,12 @@
                 }
             }
         }
+
+        .carousel__item {
+            .product-title {
+                height: 10px;
+            }
+        }
     }
 
     @media (max-width: 320px){
@@ -265,7 +272,7 @@
     .new-owl-carousel {
         .owl-item {
             .item {
-                border: 1px solid #eee;
+                border: 1px solid #ccc;
                 .lib-css(transition, border-color 300ms, 1);
                 position: relative;
 
@@ -278,6 +285,11 @@
         .owl-wrapper-outer {
             padding-left: 1px;
             padding-right: 1px;
+            overflow: hidden;
+
+            .owl-wrapper {
+                .lib-vendor-prefix-display(flex);
+            }
         }
     }
 }
